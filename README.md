@@ -12,4 +12,7 @@
     If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
 
 The first player to score 100 or more points wins.
+
+![pig_game](https://github.com/Sanskriti-rai/Pig-game/assets/88077795/74975117-8b7a-4e52-910d-8b0a6fe02c8a)
+
 </p>
