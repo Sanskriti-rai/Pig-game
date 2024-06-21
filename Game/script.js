@@ -19,8 +19,15 @@ let diceFunction = function () {
 	//dice image
 	dice.src = `dice-${diceValue}.png`;
 	//Score setting
-	if(diceValue===1)
+	if(diceValue===1){
 		currentScore.textContent = "0";
+		//game control passed to other player
+		player = Number(!player);
+
+		//changing the css style by toggling class player--active which gives highlight to active player.
+		document.querySelector(".player--0").classList.toggle("player--active");
+		document.querySelector(".player--1").classList.toggle("player--active");
+	}
 	else
 		currentScore.textContent = score(Number(currentScore.textContent),diceValue);
 }
@@ -35,7 +42,7 @@ let holdFunction = function(){
 	let currentScore = document.querySelector(`#current--${player}`);
 	highScore.textContent = Number(highScore.textContent)<Number(currentScore.textContent) ? currentScore.textContent:highScore.textContent;
 	//winner settings
-	if(Number(highScore.textContent) >=20){
+	if(Number(highScore.textContent) >=100){
 		document.querySelector(`.player--${player}`).classList.add("player--winner");
 		document.querySelector(".modal").classList.remove("hidden");
 		document.querySelector(".overlay").classList.remove("hidden");
@@ -78,7 +85,3 @@ newGameBtn.addEventListener('click', newGame);
 });
 
 
-//try
-const array = [1,2,3,4,5,6];
-const [a, b, ...{ pop }] = array;
-console.log(a,b, array);
